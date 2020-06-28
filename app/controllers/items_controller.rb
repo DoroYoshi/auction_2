@@ -13,9 +13,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
+    if @item.save
     # redirect_to("/items/#{@item.id}")
-    redirect_to @item
+      redirect_to @item
+    else
+      # render :new
+      render("/items/new")
+    end
   end
 
   def edit
