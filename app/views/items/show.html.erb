@@ -4,3 +4,5 @@
 <p><b>出品者：<%= @item.seller %></b></p>
 <p><b>電子メール：<%= @item.email %></b></p>
 <p><%= image_tag @item.image_url %></p>
+<p><%= link_to("編集", "/items/#{@item.id}/edit") %></p>
+<p><%= link_to("削除", "/items/#{@item.id}", method: :delete, {confirm: "削除してよろしいですか？"}) %></p>
